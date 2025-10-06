@@ -1,0 +1,28 @@
+TestNG Parameters and Data Providers (day45)
+
+Overview
+- Purpose: Feed tests with external parameters and programmatic data sets.
+- Files: ParamTesting.java, DataProviderDemo.java, testng.xml, Param_testng.xml
+
+Parameters
+- Define in xml and inject via @Parameters in test methods.
+- Suitable for simple scalar inputs (e.g., env, user, password from CI).
+
+Data Providers
+- @DataProvider returns Object[][] for multiple iterations per test.
+- Combine with @Test(dataProvider="name") to run same test for each row.
+
+Examples Explained
+1) ParamTesting.java + Param_testng.xml
+- Demonstrates passing parameters from xml to test and using them in flow.
+
+2) DataProviderDemo.java
+- Returns 2D data array; asserts behavior across multiple inputs.
+
+3) testng.xml
+- Alternative/global params and grouping for suite runs.
+
+Good Practices
+- Keep data small and meaningful; avoid giant matrices.
+- Name data sets to make failures traceable (e.g., with @Test name or messages).
+- Externalize large data to CSV/Excel and load in @DataProvider.
