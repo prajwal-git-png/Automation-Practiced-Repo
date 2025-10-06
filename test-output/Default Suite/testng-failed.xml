@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="SeleniumPrjkt(failed)">
+    <classes>
+      <class name="day46.ListenerClassDemo">
+        <methods>
+          <include name="setup"/>
+          <include name="testUrl"/>
+          <include name="testTitle"/>
+        </methods>
+      </class> <!-- day46.ListenerClassDemo -->
+    </classes>
+  </test> <!-- SeleniumPrjkt(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

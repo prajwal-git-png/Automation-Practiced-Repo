@@ -1,0 +1,29 @@
+Alerts and Frames (day5to7)
+
+Overview
+- Purpose: Master switching to alerts and frames/iframes for reliable interactions in embedded contexts.
+- Files: AlertsHandling.java, FramesTopic.java
+
+Alerts
+- Switch: Alert alert = driver.switchTo().alert()
+- APIs: getText(), accept(), dismiss(), sendKeys()
+- Validations: Compare alert text with expected; ensure alert disappears after accept/dismiss.
+- Pitfalls: Alerts are modal; any element interaction before handling will fail.
+
+Frames/Iframes
+- Switch: driver.switchTo().frame(index | name/id | WebElement)
+- Return: driver.switchTo().defaultContent() or parentFrame()
+- Locating inside frame: find elements after switching (not before).
+- Strategy: Identify frame by unique attributes or index only as last resort.
+
+Examples Explained
+1) AlertsHandling.java
+- Triggers different alert types (simple, confirm, prompt) and validates outcomes.
+
+2) FramesTopic.java
+- Switches to target frame; performs actions; returns to default content; continues.
+
+Good Practices
+- Always return to defaultContent() after finishing in a frame.
+- Use explicit waits for frame availability: ExpectedConditions.frameToBeAvailableAndSwitchToIt(...)
+- Keep locators resilient; avoid deep brittle XPaths inside frames.

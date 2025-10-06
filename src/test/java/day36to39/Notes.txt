@@ -1,0 +1,34 @@
+Broken Links, Shadow DOM, and SVG (day36to39)
+
+Overview
+- Purpose: Validate link integrity, and interact with complex DOM technologies.
+- Files: BrokenLinks.java, ShadowDom.java, SVGElement.java
+
+Broken Links
+- Fetch hrefs and validate via HTTP HEAD/GET status codes.
+- Ignore mailto/tel/javascript: links.
+- Report non-2xx/3xx statuses as broken.
+
+Shadow DOM
+- Use JavaScript to pierce shadow roots if native API lacking:
+  - element.shadowRoot or query via JS: return arguments[0].shadowRoot
+- Locate elements inside shadowRoot separately; cannot access via standard CSS from document root.
+
+SVG Elements
+- Use local-name() in XPath or tagName checks; SVG namespaces differ.
+- Interact via Actions if standard click fails.
+
+Examples Explained
+1) BrokenLinks.java
+- Collects all anchors, checks HTTP status, logs/report broken targets.
+
+2) ShadowDom.java
+- Expands shadow roots and interacts with inner controls reliably.
+
+3) SVGElement.java
+- Locates paths/circles via XPath with local-name(); validates tooltips/attributes.
+
+Good Practices
+- Throttle HTTP checks to avoid rate limiting.
+- Cache visited links to reduce duplicate requests.
+- Prefer resilient selectors for Shadow DOM and SVG contexts.

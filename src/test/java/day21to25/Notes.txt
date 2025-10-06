@@ -1,0 +1,38 @@
+JavaScript Executor, Scrolling, Uploads, Zoom (day21to25)
+
+Overview
+- Purpose: Use JS as a fallback, control viewport, upload files, and adjust zoom.
+- Files: JavaScriptExecutorDemo.java, Scrolling.java, Uploadfiles.java, ZoomInZoomOut.java
+
+JavaScript Executor
+- ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element)
+- Readiness: return document.readyState === 'complete'
+
+Scrolling
+- Scroll to element: arguments[0].scrollIntoView(true)
+- Window scroll: window.scrollBy(x, y)
+
+Uploads
+- Prefer input[type=file].sendKeys(localPath) when available.
+- Otherwise, use Robot/AutoIt or JS drop zone tricks.
+
+Zoom
+- document.body.style.zoom = '90%'; or Ctrl+'+' via Actions when appropriate.
+
+Examples Explained
+1) JavaScriptExecutorDemo.java
+- Click via JS for elements blocked by overlays; verify action success.
+
+2) Scrolling.java
+- Scroll into view before interacting; assert element is visible in viewport.
+
+3) Uploadfiles.java
+- Sends local path to file input; verifies filename appears.
+
+4) ZoomInZoomOut.java
+- Adjusts zoom to fit elements; asserts layout changes as expected.
+
+Good Practices
+- Use JS sparingly—prefer native WebDriver first.
+- Ensure test independence by resetting zoom after changes.
+- Escape file paths correctly on Windows.

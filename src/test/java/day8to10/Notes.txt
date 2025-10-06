@@ -1,0 +1,35 @@
+Dropdowns, Bootstrap Menus, and Autosuggest (day8to10)
+
+Overview
+- Purpose: Interact with select controls, custom dropdowns, and dynamic suggestions.
+- Files: DropDowns.java, BootstrapMenu.java, GoogleSearchBar.java
+
+Native Select (<select>)
+- Use org.openqa.selenium.support.ui.Select
+- APIs: selectByVisibleText, selectByValue, selectByIndex, getOptions, isMultiple
+- Validation: Verify selected option(s) match expected.
+
+Custom Dropdowns (Bootstrap/React/etc.)
+- Often not a <select>; interact via click on toggle then click item.
+- Use stable locator for the menu item text; ensure menu is visible first.
+
+Autosuggest/Typeahead (GoogleSearchBar)
+- Type query; wait for suggestions list; iterate items and click match.
+- Synchronize with explicit waits for visibility/presence of suggestions.
+
+Examples Explained
+1) DropDowns.java
+- Shows both native Select usage and custom dropdown clicking.
+- Edge cases: scrolling into view before clicking; handling disabled options.
+
+2) BootstrapMenu.java
+- Click toggle; wait for menu; choose by text; assert resulting navigation/action.
+
+3) GoogleSearchBar.java
+- Enter partial term; capture suggestions; select exact/contains text item.
+- Assertion: result page title contains the chosen suggestion.
+
+Good Practices
+- Prefer text-based locators for menu items to avoid index brittleness.
+- Use waits around opening/closing animations.
+- Guard against overlay elements intercepting clicks; scroll if necessary.

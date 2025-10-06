@@ -1,0 +1,37 @@
+Browser Modes, Extensions, and SSL (day31to35)
+
+Overview
+- Purpose: Run browsers in special modes and handle security/extension scenarios.
+- Files: HeadlessOperation.java, Incognito.java, EnableExtention.java, DisableAutomatedMessage.java, BadSSL.java
+
+Headless
+- ChromeOptions options = new ChromeOptions(); options.addArguments("--headless=new")
+- Useful for CI; validate rendering-dependent tests carefully.
+
+Incognito
+- options.addArguments("--incognito") to isolate cookies/cache.
+
+Extensions
+- options.addExtensions(new File("SelectorsHub.crx"))
+- Beware: Extensions can alter DOM; scope tests appropriately.
+
+Automation Banners
+- Disable info bars: options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"))
+
+Bad SSL
+- Accept insecure certs: options.setAcceptInsecureCerts(true)
+
+Examples Explained
+1) HeadlessOperation.java & Incognito.java
+- Configure and assert mode by checking UA or privacy indicators.
+
+2) EnableExtention.java / DisableAutomatedMessage.java
+- Load extension, verify presence; suppress banners for cleaner UI.
+
+3) BadSSL.java
+- Navigate to badssl; assert page loads with insecure certs accepted.
+
+Good Practices
+- Keep mode-specific options encapsulated for reuse.
+- Avoid running visual/drag tests in headless unless necessary.
+- Track browser version compatibility.

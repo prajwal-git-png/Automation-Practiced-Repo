@@ -1,0 +1,28 @@
+Assertions and Annotations (day43)
+
+Overview
+- Purpose: Strengthen validation and organize tests using annotations.
+- Files: AssertionClassDemo.java, TestAnnotations.java, TestingBeforeclass.java, pack/C1.java, pack/C2.java, pack/C3.java
+
+Assertions
+- Hard vs soft assertions; assertEquals/assertTrue/assertFalse/contains.
+- Provide clear failure messages for diagnostics.
+
+Annotations
+- @BeforeClass/@AfterClass, @BeforeMethod/@AfterMethod for lifecycle hooks.
+- @Test(priority=..., enabled=..., description=...)
+
+Examples Explained
+1) AssertionClassDemo.java
+- Demonstrates multiple assertion types with meaningful messages.
+
+2) TestAnnotations.java / TestingBeforeclass.java
+- Shows test lifecycle with setup/teardown per class/method.
+
+3) pack/C1.java, C2.java, C3.java
+- Organized examples under a sub-package to illustrate grouping and modularity.
+
+Good Practices
+- Keep assertions specific and minimal per test.
+- Prefer one logical assertion per test, or group related checks carefully.
+- Use descriptions to make reports readable.

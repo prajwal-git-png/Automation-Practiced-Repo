@@ -1,0 +1,28 @@
+Excel Utilities and Data-Driven Testing (day40)
+
+Overview
+- Purpose: Read/write Excel files to drive tests and persist results.
+- Files: ReadFromExcel.java, WriteDataInExcel.java, EditingData.java, DynamicDataInsert.java, Book1.xlsx ... Book4.xlsx
+
+Reading Excel
+- Use Apache POI (HSSF/XSSF) to open workbook → sheet → rows → cells.
+- Convert cell types safely (string/numeric/boolean/date); handle blanks.
+
+Writing Excel
+- Create/modify workbook; write cells; autosize columns; save to file.
+- For updates, read existing file, edit in-memory, write back.
+
+Dynamic Data
+- Generate data (timestamps, UUIDs) and insert into rows to avoid collisions.
+
+Examples Explained
+1) ReadFromExcel.java
+- Iterates rows/cells; collects into data structures for test inputs.
+
+2) WriteDataInExcel.java / EditingData.java / DynamicDataInsert.java
+- Demonstrates creating sheets, updating cells, and appending new rows.
+
+Good Practices
+- Close workbook/streams in finally to prevent file locks.
+- Keep test data separate from code; avoid committing secrets.
+- Validate file paths and handle Windows path separators.

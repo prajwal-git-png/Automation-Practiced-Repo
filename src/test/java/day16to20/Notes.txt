@@ -1,0 +1,34 @@
+Keyboard, Windows, and Sliders (day16to20)
+
+Overview
+- Purpose: Simulate keyboard events, manage windows/tabs, and interact with sliders.
+- Files: KeyboardActions.java, NewWindowHandle.java, SliderUsingJava.java
+
+Keyboard
+- Use Actions.sendKeys(element, Keys.ENTER/TAB/ARROW_*) for focused input.
+- Global shortcuts: sendKeys(Keys.CONTROL, "a"), etc. Ensure correct focus.
+
+Windows/Tabs
+- Open new tab/window via Ctrl+Enter or target attribute; capture handles.
+- Switch using driver.switchTo().window(handle); validate destination.
+
+Sliders
+- Approaches:
+  - Drag by offset: clickAndHold(handle).moveByOffset(x, 0).release().
+  - Set value via JS if native range input.
+- Validate by reading value attribute or bound label.
+
+Examples Explained
+1) KeyboardActions.java
+- Chains keystrokes to navigate forms; asserts focus and value changes.
+
+2) NewWindowHandle.java
+- Demonstrates controlled switching and cleanup of child windows.
+
+3) SliderUsingJava.java
+- Uses JS to set slider value precisely; cross-check UI position/value.
+
+Good Practices
+- Avoid hard-coded offsets for sliders; derive from min/max and width.
+- Always re-assert focus before sending keys.
+- Close extra windows to keep session deterministic.

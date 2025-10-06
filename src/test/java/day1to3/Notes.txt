@@ -1,0 +1,45 @@
+Getting Started: WebDriver Basics, Navigation, and Waits (day1to3)
+
+Overview
+- Purpose: Establish a reliable baseline for launching browsers, navigating, locating elements, and synchronizing with page state.
+- Files: First.java, DriverMethods.java, WaitMethods.java
+
+Environment & Setup
+- WebDriver: Use a matching browser driver (e.g., chromedriver) on PATH.
+- Basic lifecycle: create driver → navigate → interact → assert → quit.
+
+Core Concepts
+- Navigation: driver.get(url), driver.navigate().to/back/forward/refresh
+- Window management: driver.manage().window().maximize()
+- Timeouts:
+  - Implicit wait: driver.manage().timeouts().implicitlyWait(duration)
+  - Page load timeout: driver.manage().timeouts().pageLoadTimeout(duration)
+  - Script timeout: driver.manage().timeouts().setScriptTimeout(duration)
+- Locators: By.id/name/className/tagName/linkText/partialLinkText/xpath/cssSelector
+- Element APIs: click, sendKeys, getText, getAttribute, isDisplayed/Enabled/Selected
+
+Examples Explained
+1) First.java (hello WebDriver)
+- Goal: Launch browser, open a URL, fetch title/URL, then close.
+- Validations: Compare expected vs actual title; log pass/fail.
+- Key ideas: Driver setup, sanity navigation, teardown.
+
+2) DriverMethods.java (navigation and window operations)
+- Demonstrates: navigate().to/back/forward/refresh; manage window; getTitle/getCurrentUrl.
+- Pitfalls: After navigation, elements may go stale; re-locate if needed.
+
+3) WaitMethods.java (synchronization)
+- Implicit wait: Global poll for findElement. Simple but not granular.
+- Explicit wait: WebDriverWait.until(ExpectedConditions.visibilityOfElementLocated(...)).
+- When to use: Prefer explicit waits for dynamic UI; keep implicit minimal.
+
+Good Practices
+- Prefer explicit waits tied to the exact condition (visibility, clickability, URL contains, JS ready).
+- Keep tests independent; start from a known URL and state.
+- Always close/quit the driver in finally/tearDown to avoid orphaned sessions.
+
+Checklist
+- Driver available on PATH
+- Deterministic URL and assertions
+- Synchronization in place for dynamic elements
+- Teardown consistently executed

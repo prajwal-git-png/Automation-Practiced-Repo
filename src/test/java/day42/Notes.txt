@@ -1,0 +1,22 @@
+Intro to Test Cases (day42)
+
+Overview
+- Purpose: Write basic test cases using Selenium and a testing framework.
+- Files: FirstTestCase.java, OrangeHRMtest.java
+
+Test Structure
+- Arrange: setup driver and navigate to base URL.
+- Act: perform interactions to reach the expected state.
+- Assert: verify using title/text/URL/element state.
+
+Examples Explained
+1) FirstTestCase.java
+- Minimal test that opens a page and validates key UI/text.
+
+2) OrangeHRMtest.java
+- Logs into OrangeHRM demo; validates dashboard/home visibility.
+
+Good Practices
+- Keep tests atomic and independent.
+- Use setup/teardown methods to manage driver lifecycle.
+- Add waits only where necessary to keep tests fast.

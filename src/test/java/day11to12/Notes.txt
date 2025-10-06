@@ -1,0 +1,28 @@
+Web Tables and Pagination (day11to12)
+
+Overview
+- Purpose: Read table data reliably and navigate paginated datasets.
+- Files: Tablehandling.java, TableWithPagination.java
+
+Reading Tables
+- Locate table; identify headers; build row/column index mapping if needed.
+- Extract rows via <tr> and cells via <td>/<th>.
+- Strategy: For dynamic tables, re-locate rows each iteration to avoid stale references.
+
+Pagination
+- Identify next/prev or page number controls.
+- Loop until target record found or pages exhausted.
+- Break condition: once match is found, perform action and exit.
+
+Examples Explained
+1) Tablehandling.java
+- Iterates rows and columns; prints/collects cell text; optionally asserts a value.
+
+2) TableWithPagination.java
+- While next is enabled: scan current page; if not found, click next; repeat.
+- Use explicit waits for table to refresh before scanning again.
+
+Good Practices
+- Avoid hard-coded column indexes; derive by header names when possible.
+- Debounce pagination clicks with waits for staleness/visibility of table.
+- Capture screenshots on failure for debugging (see day27to30).

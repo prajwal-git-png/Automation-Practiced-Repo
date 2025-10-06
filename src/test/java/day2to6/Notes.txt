@@ -1,0 +1,41 @@
+Contexts, Elements, and Windows (day2to6)
+
+Overview
+- Purpose: Practice handling multiple windows/tabs, navigating complex flows, and interacting with basic controls.
+- Files: Assignment.java, BroserWindowHandles.java, HandlinkCheckBox.java, NavigateExample.java, SwitchBetween.java, SwitchToSpecific.java
+
+Key Topics
+- Multiple windows/tabs:
+  - getWindowHandle() for current; getWindowHandles() to iterate all.
+  - Switch with driver.switchTo().window(handle); validate by title/URL.
+  - Strategy: capture parent handle; open child; switch; close; return to parent.
+- Checkboxes and basic controls:
+  - Use isSelected() before toggling; assert expected state.
+  - Prefer stable locators over brittle XPaths.
+- Navigation flows:
+  - Navigate through app pages; verify breadcrumbs/title/URL.
+  - Re-locate elements after navigation to avoid StaleElementReferenceException.
+
+Examples Explained
+1) BroserWindowHandles.java
+- Opens new tab/window; iterates handles; switches based on expected title.
+- Validation: assert driver.getTitle().contains(keyword) for the target.
+
+2) SwitchToSpecific.java / SwitchBetween.java
+- Encapsulates switching logic by matching partial titles/URLs.
+- Tip: Wrap switching in a utility method to reuse across tests.
+
+3) HandlinkCheckBox.java
+- Locates checkbox; conditionally click only if required.
+- Assertion: isSelected() == expectedState.
+
+4) NavigateExample.java
+- Demonstrates navigate().to/back/forward/refresh with assertions per step.
+
+5) Assignment.java
+- Combined scenario: open new window, interact with controls, and return.
+
+Good Practices
+- Always store the parent handle before opening new windows.
+- Use explicit waits for elements in the new context before interacting.
+- Close child windows to avoid handle leakage.

@@ -1,0 +1,26 @@
+Config Properties and Utilities (day41)
+
+Overview
+- Purpose: Externalize configuration and create reusable utilities.
+- Files: config.properties, ReadPropertiesFile.java, UtilityAuto.java, ExampleForDataUtility.java, Book1.xlsx
+
+Properties
+- Load using java.util.Properties with FileInputStream.
+- Access keys for baseUrl, credentials, timeouts, etc.
+- Avoid hard-coding; prefer environment-specific files when needed.
+
+Utilities
+- Common helpers for waits, screenshots, JS ready checks, data readers.
+- Centralize repeated code to reduce duplication in tests.
+
+Examples Explained
+1) ReadPropertiesFile.java
+- Loads properties; prints/uses values in test setup.
+
+2) UtilityAuto.java / ExampleForDataUtility.java
+- Provides wrappers for frequent actions (wait for visibility, click via JS, read Excel row, etc.).
+
+Good Practices
+- Validate required keys and provide sensible defaults.
+- Keep secrets out of VCS or encrypt them.
+- Document all available keys in README.

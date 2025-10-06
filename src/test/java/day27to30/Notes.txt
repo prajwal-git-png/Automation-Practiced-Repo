@@ -1,0 +1,23 @@
+Screenshots and Evidence (day27to30)
+
+Overview
+- Purpose: Capture visual evidence for debugging and reporting.
+- Files: ScreenShot.java, file/screenshot.png, file/TableScreenshot.png
+
+Capturing Screenshots
+- Full page: TakesScreenshot ts = (TakesScreenshot) driver; File src = ts.getScreenshotAs(OutputType.FILE)
+- Element screenshot: element.getScreenshotAs(OutputType.FILE)
+- Save with timestamped filenames to avoid overwrites.
+
+Table/Region Screens
+- Scroll into view; capture element-only screenshot for precision.
+
+Examples Explained
+1) ScreenShot.java
+- Wraps reusable method to capture full page or element screenshot.
+- Saves under project directory; demonstrates naming conventions.
+
+Good Practices
+- Include screenshots on assertion failures.
+- Store artifacts in a dedicated folder and clean up regularly.
+- For CI, expose screenshots as build artifacts.

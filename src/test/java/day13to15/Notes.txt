@@ -1,0 +1,33 @@
+Date Pickers and Advanced Actions (day13to15)
+
+Overview
+- Purpose: Handle calendar widgets robustly and practice complex user gestures.
+- Files: DatePicker.java, DatePick2.java, BestWayDatePicker.java, DoubleClick.java, RightClickAction.java, DragAndDrop.java
+
+Date Pickers
+- Static vs dynamic calendars: prefer navigating month/year controls over hard-coded dates.
+- Strategy:
+  - Open widget → loop until expected month/year visible → click day.
+  - Handle disabled days and out-of-month cells.
+- Robust locators: target header for month/year; derive day cells by text.
+
+Actions API
+- Build complex gestures with org.openqa.selenium.interactions.Actions
+- Common patterns: doubleClick(element), contextClick(element), clickAndHold().moveToElement().release(), dragAndDrop(src, dst)
+
+Examples Explained
+1) BestWayDatePicker.java
+- Encapsulates a loop to reach target month/year, then selects day.
+- Edge cases: year boundary, multiple calendars (from/to date).
+
+2) DoubleClick.java & RightClickAction.java
+- Demonstrates double-click and context menu; assert resulting UI changes.
+
+3) DragAndDrop.java
+- Uses dragAndDrop or manual clickAndHold/move/release for reliability.
+- Assertion: verify element dropped in target container.
+
+Good Practices
+- Avoid absolute XPaths tied to calendar structure; rely on visible text.
+- Add small waits around UI transitions to stabilize interactions.
+- Validate the selected date in the input value or bound model.
