@@ -76,31 +76,31 @@ This repository represents a structured learning path covering essential Seleniu
 Each package contains comprehensive `Notes.txt` with detailed explanations, examples, and best practices:
 
 ### Foundation Level Notes
-- [day1to3/Notes.txt](day1to3/Notes.txt) - WebDriver basics, navigation, and synchronization
-- [day2to6/Notes.txt](day2to6/Notes.txt) - Window handles, checkboxes, and context switching
-- [day5to7/Notes.txt](day5to7/Notes.txt) - Alerts and frames handling
-- [day8to10/Notes.txt](day8to10/Notes.txt) - Dropdowns, Bootstrap menus, and autosuggest
+- [day1to3/Notes.txt](src/test/java/day1to3/Notes.txt) - WebDriver basics, navigation, and synchronization
+- [day2to6/Notes.txt](src/test/java/day2to6/Notes.txt) - Window handles, checkboxes, and context switching
+- [day5to7/Notes.txt](src/test/java/day5to7/Notes.txt) - Alerts and frames handling
+- [day8to10/Notes.txt](src/test/java/day8to10/Notes.txt) - Dropdowns, Bootstrap menus, and autosuggest
 
 ### Intermediate Level Notes
-- [day11to12/Notes.txt](day11to12/Notes.txt) - Web tables and pagination
-- [day13to15/Notes.txt](day13to15/Notes.txt) - Date pickers and advanced Actions API
-- [day16to20/Notes.txt](day16to20/Notes.txt) - Keyboard actions, sliders, and window management
-- [day21to25/Notes.txt](day21to25/Notes.txt) - JavaScript executor, scrolling, uploads, and zoom
+- [day11to12/Notes.txt](src/test/java/day11to12/Notes.txt) - Web tables and pagination
+- [day13to15/Notes.txt](src/test/java/day13to15/Notes.txt) - Date pickers and advanced Actions API
+- [day16to20/Notes.txt](src/test/java/day16to20/Notes.txt) - Keyboard actions, sliders, and window management
+- [day21to25/Notes.txt](src/test/java/day21to25/Notes.txt) - JavaScript executor, scrolling, uploads, and zoom
 
 ### Advanced Level Notes
-- [day27to30/Notes.txt](day27to30/Notes.txt) - Screenshots and evidence collection
-- [day31to35/Notes.txt](day31to35/Notes.txt) - Browser modes, extensions, and SSL handling
-- [day36to39/Notes.txt](day36to39/Notes.txt) - Broken links, Shadow DOM, and SVG elements
-- [day40/Notes.txt](day40/Notes.txt) - Excel utilities and data-driven testing
-- [day41/Notes.txt](day41/Notes.txt) - Configuration management and utilities
+- [day27to30/Notes.txt](src/test/java/day27to30/Notes.txt) - Screenshots and evidence collection
+- [day31to35/Notes.txt](src/test/java/day31to35/Notes.txt) - Browser modes, extensions, and SSL handling
+- [day36to39/Notes.txt](src/test/java/day36to39/Notes.txt) - Broken links, Shadow DOM, and SVG elements
+- [day40/Notes.txt](src/test/java/day40/Notes.txt) - Excel utilities and data-driven testing
+- [day41/Notes.txt](src/test/java/day41/Notes.txt) - Configuration management and utilities
 
 ### Test Framework Level Notes
-- [day42/Notes.txt](day42/Notes.txt) - TestNG basics and test case structure
-- [day43/Notes.txt](day43/Notes.txt) - Assertions and TestNG annotations
-- [day44/Notes.txt](day44/Notes.txt) - TestNG suites, dependencies, and test organization
-- [day45/Notes.txt](day45/Notes.txt) - Parameters and data providers
-- [day46/Notes.txt](day46/Notes.txt) - TestNG listeners and Extent Reports
-- [day47/Notes.txt](day47/Notes.txt) - Page Object Model implementation
+- [day42/Notes.txt](src/test/java/day42/Notes.txt) - TestNG basics and test case structure
+- [day43/Notes.txt](src/test/java/day43/Notes.txt) - Assertions and TestNG annotations
+- [day44/Notes.txt](src/test/java/day44/Notes.txt) - TestNG suites, dependencies, and test organization
+- [day45/Notes.txt](src/test/java/day45/Notes.txt) - Parameters and data providers
+- [day46/Notes.txt](src/test/java/day46/Notes.txt) - TestNG listeners and Extent Reports
+- [day47/Notes.txt](src/test/java/day47/Notes.txt) - Page Object Model implementation
 
 ## Skills demonstrated
 
